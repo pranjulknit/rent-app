@@ -10,5 +10,6 @@ const bookingSchema = new mongoose.Schema({
   price: Number,
 });
 
-export const BookingModel = mongoose.model('Booking', bookingSchema);
+const BookingModel = mongoose.model('Booking', bookingSchema);
 
+export default BookingModel;

@@ -14,4 +14,6 @@ const placeSchema = new mongoose.Schema({
     price:Number,
 })
 
-export const PlaceModel = mongoose.model('Place',placeSchema)
+ const PlaceModel= mongoose.model('Place',placeSchema)
+
+ export default PlaceModel;
