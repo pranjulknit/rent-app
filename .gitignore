@@ -1,0 +1,6 @@
+server/models
+server/node_modules
+server/uploads
+server/.env
+server/.index.js
+client
