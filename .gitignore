@@ -1,7 +1,4 @@
-server/models/place.js
- 
 
-server/models/booking.js
 server/node_modules
 server/uploads
 server/.env
