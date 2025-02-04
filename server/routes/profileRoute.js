@@ -1,9 +1,12 @@
 import { profileEnd } from "console";
 import express from "express";
 import jwt from "jsonwebtoken";
+import User from "../models/user.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const profileRouter = express.Router();
-const jwtSecret = process.env.JWT_SECRET || "your-jwt-secret";
+const jwtSecret = process.env.JWT_SECRET;
 
 profileRouter.get('/profile', (req,res) => {
     const {token} = req.cookies;
@@ -26,8 +29,9 @@ profileRouter.get('/profile', (req,res) => {
           }
     
           // Returning user data
+          console.log("profile",user)
           const { name, email, _id } = user;
-          res.json({ name, email, _id });
+          res.status(200).json({ name, email, _id });
         });
       } catch (error) {
         console.error("Error fetching profile:", error);

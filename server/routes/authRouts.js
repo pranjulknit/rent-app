@@ -3,8 +3,11 @@ import User from "../models/user.js";
 const authRouter = express.Router();
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
-const jwtSecret = process.env.JWT_SECRET || "your-jwt-secret"; 
+dotenv.config();
+
+const jwtSecret = process.env.JWT_SECRET;
 
 /**
  * @swagger

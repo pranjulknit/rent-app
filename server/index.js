@@ -22,14 +22,16 @@ mongoose.connect(MONGO_URI).then(()=>console.log("mongodb connected")).catch((e)
 
 
 const app = express();
-app.use(express.json()); //body parser
-app.use(cookieParser())
-app.use('/uploads', express.static(path.resolve('uploads')));  // Serve static files from the 'uploads' folder
+app.use(express.json()); 
+app.use(cookieParser());
+app.use('/uploads', express.static(path.resolve('uploads')));  
 
 app.use(
-  cors()
+  cors({
+    origin: 'http://localhost:5174', // Replace with the allowed origin
+    credentials: true, // Allow credentials (cookies, HTTP auth, etc.)
+  })
 );
-
 app.use(authRouter);
 app.use(profileRouter);
 app.use(photoRouter);

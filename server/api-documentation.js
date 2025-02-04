@@ -30,7 +30,7 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 // Remove the leading '/' if on Windows
 const normalizedDirname = __dirname.startsWith('/') ? __dirname.slice(1) : __dirname;
 
-const readmePath = path.join(normalizedDirname, 'README.md');
+const readmePath = path.join(normalizedDirname, 'documentation.json');
 
 const appendSwaggerToReadme = () => {
  
